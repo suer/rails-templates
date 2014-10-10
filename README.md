@@ -14,6 +14,8 @@ $ rails new . -m https://raw.githubusercontent.com/suer/rails-templates/master/t
 Modules
 ------------------
 
+* Slim
+* Devise
 * RSpec
 
 
