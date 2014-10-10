@@ -20,4 +20,9 @@ config.generators.test_framework = :rspec
     config.generators.javascripts = false
 GENERATORS
 
+# top page
+remove_file 'app/views/layouts/application.html.erb'
+generate :controller, 'top index'
+route "root to: 'top\#index'"
+
 run 'bundle exec spring stop'
