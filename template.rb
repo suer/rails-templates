@@ -37,7 +37,7 @@ ROUTE
 get 'https://raw.githubusercontent.com/suer/rails-templates/master/app/models/user.rb', './app/models/user.rb'
 get 'https://raw.githubusercontent.com/suer/rails-templates/master/app/models/settings.rb', './app/models/settings.rb'
 get 'https://raw.githubusercontent.com/suer/rails-templates/master/config/settings.yml', './config/settings.yml'
-get 'https://raw.githubusercontent.com/suer/rails-templates/master/config/initializes/devise.rb', './config/initializes/devise.rb'
+get 'https://raw.githubusercontent.com/suer/rails-templates/master/config/initializers/devise.rb', './config/initializers/devise.rb'
 get 'https://raw.githubusercontent.com/suer/rails-templates/master/db/migrate/20140720020818_devise_create_users.rb', './db/migrate/20140720020818_devise_create_users.rb'
 rake('db:migrate')
 
