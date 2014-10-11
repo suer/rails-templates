@@ -11,11 +11,12 @@ $ cd myapp
 $ rails new . -m https://raw.githubusercontent.com/suer/rails-templates/master/template.rb
 ```
 
-Modules
+Main Modules
 ------------------
 
 * Slim
 * Devise
+* Bootstrap
 * RSpec
 
 
