@@ -1,8 +1,8 @@
 .hero-unit
   .content
     .text-center
-      h1 Testarossa
-      h2 Handling your tests
+      h1 Title
+      h2 Sub Title
       = form_tag user_omniauth_authorize_path(Settings.omniauth.provider.to_sym), :method => 'post' do |f|
         button.btn.btn-primary.btn-large
           span.glyphicon.glyphicon-log-in
