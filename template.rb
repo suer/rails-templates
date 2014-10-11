@@ -26,6 +26,7 @@ gem 'omniauth'
 gem 'omniauth-twitter'
 gem 'omniauth-github'
 gem 'settingslogic'
+run 'bundle install --path .bundle'
 generate 'devise:install'
 route <<ROUTE
 devise_for :users, controllers: { omniauth_callbacks: 'authentication' }
@@ -39,7 +40,7 @@ get 'https://raw.githubusercontent.com/suer/rails-templates/master/app/models/se
 get 'https://raw.githubusercontent.com/suer/rails-templates/master/config/settings.yml', './config/settings.yml'
 get 'https://raw.githubusercontent.com/suer/rails-templates/master/config/initializers/devise.rb', './config/initializers/devise.rb'
 get 'https://raw.githubusercontent.com/suer/rails-templates/master/db/migrate/20140720020818_devise_create_users.rb', './db/migrate/20140720020818_devise_create_users.rb'
-rake('db:migrate')
+run 'bundle exec rake db:migrate'
 
 # top page
 remove_file 'app/views/layouts/application.html.erb'
