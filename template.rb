@@ -44,6 +44,7 @@ rake('db:migrate')
 # top page
 remove_file 'app/views/layouts/application.html.erb'
 get 'https://raw.githubusercontent.com/suer/rails-templates/master/app/views/layouts/application.html.slim', './app/views/layouts/application.html.slim'
+get 'https://raw.githubusercontent.com/suer/rails-templates/master/app/views/top/index.html.slim', './app/views/top/index.html.slim'
 generate :controller, 'top index'
 get 'https://raw.githubusercontent.com/suer/rails-templates/master/app/controllers/top_controller.rb', './app/controllers/top_controller.rb'
 route "root to: 'top\#index'"

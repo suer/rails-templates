@@ -1,0 +1,10 @@
+.hero-unit
+  .content
+    .text-center
+      h1 Testarossa
+      h2 Handling your tests
+      = form_tag user_omniauth_authorize_path(Settings.omniauth.provider.to_sym), :method => 'post' do |f|
+        button.btn.btn-primary.btn-large
+          span.glyphicon.glyphicon-log-in
+          = t(:button_sign_in)
+
