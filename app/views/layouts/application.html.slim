@@ -18,7 +18,7 @@ html
         .collapse.navbar-collapse
           - if user_signed_in?
             ul.nav.navbar-nav
-              li= link_to "Top", top_path
+              li= link_to "Top", controller: :top
             ul.nav.navbar-nav.pull-right
               li.dropdown
                 a.dropdown-toggle data-toggle='dropdown' role='button' href="#" Account

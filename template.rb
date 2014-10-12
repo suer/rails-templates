@@ -38,6 +38,7 @@ ROUTE
 get 'https://raw.githubusercontent.com/suer/rails-templates/master/app/models/user.rb', 'app/models/user.rb'
 get 'https://raw.githubusercontent.com/suer/rails-templates/master/app/models/settings.rb', 'app/models/settings.rb'
 get 'https://raw.githubusercontent.com/suer/rails-templates/master/config/settings.yml', 'config/settings.yml'
+get 'https://raw.githubusercontent.com/suer/rails-templates/master/app/controllers/authentication_controller.rb', 'app/controllers/authentication_controller.rb'
 
 remove_file 'config/initializers/devise.rb'
 get 'https://raw.githubusercontent.com/suer/rails-templates/master/config/initializers/devise.rb', 'config/initializers/devise.rb'
