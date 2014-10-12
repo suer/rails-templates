@@ -7,6 +7,8 @@ run 'bundle install --path .bundle'
 
 generate 'rspec:install'
 remove_dir 'test'
+remove_file 'spec/rails_helper.rb'
+get 'https://raw.githubusercontent.com/suer/rails-templates/master/spec/rails_helper.rb', 'spec/rails_helper.rb'
 
 # Slim
 gem 'slim-rails'
@@ -68,7 +70,6 @@ route "root to: 'top\#index'"
 run 'bundle exec spring stop'
 
 # Bootstrap
-#gem 'sass-rails', '~> 4.0.3'
 gem 'bootstrap-sass', '~> 3.0.3.0'
 run 'bundle install --path .bundle'
 run 'bundle exec rails g bootstrap:install'
