@@ -51,14 +51,11 @@ run 'bundle exec rake db:migrate'
 remove_file 'app/views/layouts/application.html.erb'
 get 'https://raw.githubusercontent.com/suer/rails-templates/master/app/views/layouts/application.html.slim', 'app/views/layouts/application.html.slim'
 generate :controller, 'top index'
-remove_file 'app/views/top/index.html.slim'
-get 'https://raw.githubusercontent.com/suer/rails-templates/master/app/views/top/index.html.slim', 'app/views/top/index.html.slim'
-remove_file 'app/controllers/top_controller.rb'
-get 'https://raw.githubusercontent.com/suer/rails-templates/master/app/controllers/top_controller.rb', 'app/controllers/top_controller.rb'
+get 'https://raw.githubusercontent.com/suer/rails-templates/master/app/views/top/index.html.slim', 'app/views/top/index.html.slim', force: true
+get 'https://raw.githubusercontent.com/suer/rails-templates/master/app/controllers/top_controller.rb', 'app/controllers/top_controller.rb', force: true
 route "root to: 'top\#index'"
 
-remove_file 'app/assets/javascripts/application.js'
-get 'https://raw.githubusercontent.com/suer/rails-templates/master/app/assets/javascripts/application.js', 'app/assets/javascripts/application.js'
+get 'https://raw.githubusercontent.com/suer/rails-templates/master/app/assets/javascripts/application.js', 'app/assets/javascripts/application.js', force: true
 
 remove_file 'app/assets/stylesheets/application.css'
 get 'https://raw.githubusercontent.com/suer/rails-templates/master/app/assets/stylesheets/application.css.scss', 'app/assets/stylesheets/application.css.scss'
@@ -73,8 +70,7 @@ run 'bundle exec rails g bootstrap:install'
 run 'bundle exec rails g bootstrap:layout application fluid'
 
 # localization
-remove_file 'config/locales/en.yml'
-get 'https://raw.githubusercontent.com/suer/rails-templates/master/config/locales/en.yml', 'config/locales/en.yml'
+get 'https://raw.githubusercontent.com/suer/rails-templates/master/config/locales/en.yml', 'config/locales/en.yml', force: true
 
 
 run 'bundle exec spring stop'
