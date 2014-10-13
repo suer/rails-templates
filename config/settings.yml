@@ -1,4 +1,4 @@
-devise_secret_key: ''
+devise_secret_key: <%= ENV['DEVISE_SECRET_KEY'] || '' %>
 
 omniauth:
   provider: <%= ENV['OMNIAUTH_PROVIDER'] || 'github' %>
