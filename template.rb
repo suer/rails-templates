@@ -72,4 +72,9 @@ run 'bundle install --path .bundle'
 run 'bundle exec rails g bootstrap:install'
 run 'bundle exec rails g bootstrap:layout application fluid'
 
+# localization
+remove_file 'config/locales/en.yml'
+get 'https://raw.githubusercontent.com/suer/rails-templates/master/config/locales/en.yml', 'config/locales/en.yml'
+
+
 run 'bundle exec spring stop'
