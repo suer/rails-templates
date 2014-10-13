@@ -66,11 +66,10 @@ get 'https://raw.githubusercontent.com/suer/rails-templates/master/app/assets/st
 
 route "root to: 'top\#index'"
 
-
-run 'bundle exec spring stop'
-
 # Bootstrap
 gem 'bootstrap-sass', '~> 3.0.3.0'
 run 'bundle install --path .bundle'
 run 'bundle exec rails g bootstrap:install'
 run 'bundle exec rails g bootstrap:layout application fluid'
+
+run 'bundle exec spring stop'
