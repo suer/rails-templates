@@ -22,7 +22,7 @@ Main Modules
 Environment variables for Devise
 -----------------------------------
 
-**OMNIAUTH_PROVIDER**, **OMNIAUTH_ARGS**.
+#### OMNIAUTH\_PROVIDER, OMNIAUTH\_ARGS
 
 For example, omniauth-github needs an initializer as follows:
 ```ruby
@@ -39,7 +39,7 @@ export OMNIAUTH_ARGS="['GITHUB_KEY','GITHUB_SECRET']"
 
 See [config/initializers/devise.rb](https://github.com/suer/rails-templates/blob/master/config/initializers/devise.rb)
 
-**DEVISE\_SECRET\_KEY**
+#### DEVISE\_SECRET\_KEY
 
 Generate secret key and set
 
@@ -47,7 +47,7 @@ Generate secret key and set
 export DEVISE_SECRET_KEY=`bundle exec rake secret`
 ```
 
-or edit config/settings.yml directry
+or edit config/settings.yml directly
 
 License
 ------------------
