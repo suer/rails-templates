@@ -27,7 +27,7 @@ gem 'devise'
 gem 'omniauth'
 gem 'omniauth-twitter'
 gem 'omniauth-github'
-gem 'settingslogic'
+gem 'dotenv-rails'
 run 'bundle install --path .bundle'
 generate 'devise:install'
 route <<ROUTE
