@@ -72,5 +72,7 @@ run 'bundle exec rails g bootstrap:layout application fluid'
 # localization
 get 'https://raw.githubusercontent.com/suer/rails-templates/master/config/locales/en.yml', 'config/locales/en.yml', force: true
 
+# .gitignore
+get 'https://raw.githubusercontent.com/suer/rails-templates/master/.gitignore', '.gitignore'
 
 run 'bundle exec spring stop'

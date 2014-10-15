@@ -5,7 +5,7 @@ class AuthenticationController < ApplicationController
     redirect_to root_path
   end
 
-  define_method Settings.omniauth.provider do
+  define_method ENV['OMNIAUTH_PROVIDER'] do
     oauth = request.env['omniauth.auth']
     user = User.where(nickname: oauth.info.nickname).first
     if user

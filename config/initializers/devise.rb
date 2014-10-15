@@ -1,13 +1,15 @@
 Devise.setup do |config|
   require 'devise/orm/active_record'
-  config.secret_key = Settings.devise_secret_key
+  config.secret_key = ENV['DEVISE_SECRET_KEY']
   config.sign_out_via = :delete
-  case Settings.omniauth.args
+  provider = ENV['OMNIAUTH_PROVIDER'].to_sym
+  args =  JSON.parse(ENV['OMNIAUTH_ARGS'])
+  case args
   when NilClass
-    config.omniauth Settings.omniauth.provider.to_sym
+    config.omniauth provider
   when Hash
-    config.omniauth Settings.omniauth.provider.to_sym, Settings.omniauth.args
+    config.omniauth provider, args
   when Array
-    config.omniauth Settings.omniauth.provider.to_sym, *Settings.omniauth.args
+    config.omniauth provider, *args
   end
 end

@@ -1,5 +1,0 @@
-devise_secret_key: <%= ENV['DEVISE_SECRET_KEY'] || '' %>
-
-omniauth:
-  provider: <%= ENV['OMNIAUTH_PROVIDER'] || 'github' %>
-  args: <%= ENV['OMNIAUTH_ARGS'] || '[]' %>
