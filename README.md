@@ -22,6 +22,17 @@ Main Modules
 Environment variables for Devise
 -----------------------------------
 
+copy dot.env to .env.
+And then set environment variables
+
+#### DEVISE\_SECRET\_KEY
+
+Generate secret key
+
+```
+bundle exec rake secret
+```
+
 #### OMNIAUTH\_PROVIDER, OMNIAUTH\_ARGS
 
 For example, omniauth-github needs an initializer as follows:
@@ -33,21 +44,11 @@ end
 
 then you should set environment variables as follows:
 ```
-export OMNIAUTH_PROVIDER=github
-export OMNIAUTH_ARGS="['GITHUB_KEY','GITHUB_SECRET']"
+OMNIAUTH_PROVIDER=github
+OMNIAUTH_ARGS="['GITHUB_KEY','GITHUB_SECRET']"
 ```
 
 See [config/initializers/devise.rb](https://github.com/suer/rails-templates/blob/master/config/initializers/devise.rb)
-
-#### DEVISE\_SECRET\_KEY
-
-Generate secret key and set
-
-```
-export DEVISE_SECRET_KEY=`bundle exec rake secret`
-```
-
-or edit config/settings.yml directly
 
 License
 ------------------
