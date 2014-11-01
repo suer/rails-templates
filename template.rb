@@ -77,4 +77,8 @@ get 'https://raw.githubusercontent.com/suer/rails-templates/master/.gitignore', 
 # .env
 get 'https://raw.githubusercontent.com/suer/rails-templates/master/dot.env', 'dot.env'
 
+# thin
+gem 'thin'
+run 'bundle install --path .bundle'
+
 run 'bundle exec spring stop'
