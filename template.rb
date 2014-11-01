@@ -74,4 +74,7 @@ get 'https://raw.githubusercontent.com/suer/rails-templates/master/config/locale
 # .gitignore
 get 'https://raw.githubusercontent.com/suer/rails-templates/master/.gitignore', '.gitignore', force: true
 
+# .env
+get 'https://raw.githubusercontent.com/suer/rails-templates/master/dot.env', 'dot.env'
+
 run 'bundle exec spring stop'
