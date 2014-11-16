@@ -1,3 +1,5 @@
+remove_file 'Gemfile.lock'
+
 # RSpec
 gem_group :development, :test do
   gem 'rspec-rails'
