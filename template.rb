@@ -85,4 +85,8 @@ get 'https://raw.githubusercontent.com/suer/rails-templates/master/dot.env', 'do
 gem 'thin'
 run 'bundle install --path .bundle'
 
+# favicon
+remove_file 'public/favicon.ico'
+get 'https://raw.githubusercontent.com/suer/rails-templates/master/app/assets/images/favicon.ico', 'app/assets/images/favicon.ico'
+
 run 'bundle exec spring stop'
