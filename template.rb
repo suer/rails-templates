@@ -1,8 +1,9 @@
 remove_file 'Gemfile.lock'
 
-# RSpec
+# gems for development
 gem_group :development, :test do
   gem 'rspec-rails'
+  gem 'quiet_assets'
 end
 
 run 'bundle install --path .bundle'
