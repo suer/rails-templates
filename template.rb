@@ -5,17 +5,22 @@ gem_group :development, :test do
   gem 'rspec-rails'
   gem 'quiet_assets'
 end
+gem 'slim-rails'
+gem 'devise'
+gem 'omniauth'
+gem 'omniauth-twitter'
+gem 'omniauth-github'
+gem 'dotenv-rails'
+gem 'bootstrap-sass', '~> 3.0.3.0'
+gem 'thin'
 
-run 'bundle install --path .bundle'
+bundle_command 'install --path .bundle'
 
+# Rspec
 generate 'rspec:install'
 remove_dir 'test'
 remove_file 'spec/rails_helper.rb'
 get 'https://raw.githubusercontent.com/suer/rails-templates/master/spec/rails_helper.rb', 'spec/rails_helper.rb'
-
-# Slim
-gem 'slim-rails'
-run 'bundle install --path .bundle'
 
 # config
 application <<-GENERATORS
@@ -28,12 +33,6 @@ GENERATORS
 gsub_file('config/environments/production.rb', /config\.serve_static_assets = false/, 'config.serve_static_assets = true')
 
 # devise
-gem 'devise'
-gem 'omniauth'
-gem 'omniauth-twitter'
-gem 'omniauth-github'
-gem 'dotenv-rails'
-run 'bundle install --path .bundle'
 get 'https://raw.githubusercontent.com/suer/rails-templates/master/app/models/dotenv_config.rb', 'app/models/dotenv_config.rb'
 generate 'devise:install'
 route <<ROUTE
@@ -49,7 +48,7 @@ get 'https://raw.githubusercontent.com/suer/rails-templates/master/app/controlle
 remove_file 'config/initializers/devise.rb'
 get 'https://raw.githubusercontent.com/suer/rails-templates/master/config/initializers/devise.rb', 'config/initializers/devise.rb'
 get 'https://raw.githubusercontent.com/suer/rails-templates/master/db/migrate/20140720020818_devise_create_users.rb', 'db/migrate/20140720020818_devise_create_users.rb'
-run 'bundle exec rake db:migrate'
+bundle_command 'exec rake db:migrate'
 
 # top page
 remove_file 'app/views/layouts/application.html.erb'
@@ -68,10 +67,8 @@ get 'https://raw.githubusercontent.com/suer/rails-templates/master/app/assets/st
 route "root to: 'top\#index'"
 
 # Bootstrap
-gem 'bootstrap-sass', '~> 3.0.3.0'
-run 'bundle install --path .bundle'
-run 'bundle exec rails g bootstrap:install'
-run 'bundle exec rails g bootstrap:layout application fluid'
+bundle_command 'exec rails g bootstrap:install'
+bundle_command 'exec rails g bootstrap:layout application fluid'
 
 # localization
 get 'https://raw.githubusercontent.com/suer/rails-templates/master/config/locales/en.yml', 'config/locales/en.yml', force: true
@@ -82,12 +79,8 @@ get 'https://raw.githubusercontent.com/suer/rails-templates/master/.gitignore', 
 # .env
 get 'https://raw.githubusercontent.com/suer/rails-templates/master/dot.env', 'dot.env'
 
-# thin
-gem 'thin'
-run 'bundle install --path .bundle'
-
 # favicon
 remove_file 'public/favicon.ico'
 get 'https://raw.githubusercontent.com/suer/rails-templates/master/app/assets/images/favicon.ico', 'app/assets/images/favicon.ico'
 
-run 'bundle exec spring stop'
+bundle_command 'exec spring stop'
