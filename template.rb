@@ -83,4 +83,7 @@ get 'https://raw.githubusercontent.com/suer/rails-templates/master/dot.env', 'do
 remove_file 'public/favicon.ico'
 get 'https://raw.githubusercontent.com/suer/rails-templates/master/app/assets/images/favicon.ico', 'app/assets/images/favicon.ico'
 
+# Procfile
+get 'https://raw.githubusercontent.com/suer/rails-templates/master/Procfile', 'Procfile'
+
 bundle_command 'exec spring stop'
