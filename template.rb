@@ -13,6 +13,7 @@ gem 'omniauth-github'
 gem 'dotenv-rails'
 gem 'bootstrap-sass', '~> 3.0.3.0'
 gem 'thin'
+gem 'foreman'
 
 bundle_command 'install --path .bundle'
 
